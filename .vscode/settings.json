@@ -25,5 +25,11 @@
     },
     "editor.snippetSuggestions": "top",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "git.enabled": true,
+    "git.autofetch": true,
+    "git.autorefresh": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.postCommitCommand": "push"
 }
