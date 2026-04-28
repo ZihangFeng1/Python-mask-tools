@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "ruby_lsp",
+            "name": "Debug current file (standalone Ruby)",
+            "request": "launch",
+            "program": "ruby",
+            "args": ["${file}"],
+            "description": "用于普通Ruby脚本，不适用于KLayout脚本"
+        },
+        {
+            "type": "ruby_lsp",
+            "name": "Debug script with arguments",
+            "request": "launch",
+            "program": "ruby",
+            "args": ["${file}"]
+        }
+    ],
+    "compounds": []
+}

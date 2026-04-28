@@ -1,0 +1,74 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "▶ Run in KLayout (GUI 模式)",
+            "type": "shell",
+            "command": "start",
+            "args": ["\"\"", "E:\\Klayout\\klayout_app.exe", "-rr", "${file}"],
+            "windows": {
+                "command": "cmd.exe",
+                "args": ["/c", "start", "\"\"", "E:\\Klayout\\klayout_app.exe", "-rr", "${file}"]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "▶ Run in KLayout (Batch 模式)",
+            "type": "shell",
+            "command": "E:\\Klayout\\klayout_app.exe",
+            "args": ["-b", "-rr", "${file}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "🔍 Check syntax (Ruby -c)",
+            "type": "shell",
+            "command": "E:\\Ruby3.4\\bin\\ruby.exe",
+            "args": ["-c", "${file}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "📦 Register project in KLayout",
+            "type": "shell",
+            "command": "powershell.exe",
+            "args": [
+                "-Command",
+                "& {",
+                "  $macroDir = Join-Path $env:LOCALAPPDATA 'klayout'",
+                "  if (!(Test-Path $macroDir)) { New-Item -ItemType Directory -Path $macroDir -Force | Out-Null }",
+                "  $settingsFile = Join-Path $macroDir 'macros.xml'",
+                "  $projectPath = 'E:\\PKU\\Ruby\\Ruby_mask-master\\Ruby_mask-master'",
+                "  Write-Host 'KLayout macro settings location: ' $settingsFile",
+                "  Write-Host 'Please add this path in KLayout: Tools → Macros → Macro Paths → Add'",
+                "  Write-Host '  → ' $projectPath",
+                "}"
+            ],
+            "group": "none",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}

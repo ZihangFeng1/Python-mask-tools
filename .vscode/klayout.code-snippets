@@ -1,0 +1,58 @@
+{
+  "New Layout": {
+    "prefix": "klayout",
+    "body": [
+      "main_window = RBA::Application::instance.main_window",
+      "layout = main_window.create_layout(0).layout",
+      "layout_view = main_window.current_view",
+      "layout.dbu = 0.001",
+      "",
+      "cell = layout.create_cell(\"TOP\")",
+      "layer_index = layout.insert_layer(RBA::LayerInfo::new(${1:1}, ${2:0}))",
+      "",
+      "layout_view.select_cell(cell.cell_index, 0)",
+      "layout_view.add_missing_layers",
+      "layout_view.zoom_fit"
+    ],
+    "description": "Create a new KLayout layout with view"
+  },
+  "Waveguide": {
+    "prefix": "wg",
+    "body": [
+      "pts = [RBA::DPoint.new(${1:x1}, ${2:y1}), RBA::DPoint.new(${3:x2}, ${4:y2})]",
+      "wg = Waveguide.new(pts, ${5:width})",
+      "cell.shapes(layer_index).insert(wg.poly)"
+    ],
+    "description": "Create a Waveguide"
+  },
+  "DPoint": {
+    "prefix": "dpt",
+    "body": "RBA::DPoint.new(${1:x}, ${2:y})",
+    "description": "Create a DPoint"
+  },
+  "Layer": {
+    "prefix": "layer",
+    "body": "layer_index = layout.insert_layer(RBA::LayerInfo::new(${1:layer}, ${2:0}))",
+    "description": "Insert a new layer"
+  },
+  "Cell shapes": {
+    "prefix": "shapes",
+    "body": "cell.shapes(layer_index).insert(${1:shape})",
+    "description": "Insert shape into cell layer"
+  },
+  "Round Corners": {
+    "prefix": "round",
+    "body": "pts_r = round_corners(${1:pts}, ${2:radius})",
+    "description": "Round corners of a point array"
+  },
+  "Module MyBasic": {
+    "prefix": "mod",
+    "body": [
+      "module ${1:MyModule}",
+      "  include RBA",
+      "  ${2:def method}",
+      "end"
+    ],
+    "description": "Create a module with RBA include"
+  }
+}

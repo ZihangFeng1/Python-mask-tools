@@ -1,0 +1,29 @@
+{
+    "rubyLsp.rubyVersion": "3.4.9",
+    "rubyLsp.rubyExecutablePath": "E:\\Ruby3.4\\bin\\ruby.exe",
+    "rubyLsp.linters": ["rubocop"],
+    "rubyLsp.enableFormatting": true,
+    "rubyLsp.enableDiagnostics": true,
+    "rubyLsp.enabledFeatures": {
+        "diagnostics": true,
+        "document_link": true,
+        "codeAction": true,
+        "completion": true,
+        "definition": true,
+        "foldingRanges": true,
+        "formatting": true,
+        "hover": true,
+        "inlayHint": true,
+        "semanticHighlighting": true
+    },
+    "files.associations": {
+        "*.rb": "ruby",
+        "*.lym": "xml"
+    },
+    "files.exclude": {
+        "klayout_stubs.rb": false
+    },
+    "editor.snippetSuggestions": "top",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+}

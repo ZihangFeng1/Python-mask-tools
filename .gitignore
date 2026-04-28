@@ -1,0 +1,24 @@
+# KLayout
+*.gds.gz
+*.gds
+
+# Ruby
+*.gem
+*.rbc
+.bundle
+vendor/bundle
+
+# IDE
+.vscode/settings.local.json
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary
+*.tmp
+*.log

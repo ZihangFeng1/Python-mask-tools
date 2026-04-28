@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<klayout-macro>
+ <description>Show setup instructions for VSCode integration</description>
+ <version/>
+ <category/>
+ <prolog/>
+ <epilog/>
+ <doc/>
+ <autorun>false</autorun>
+ <autorun-early>false</autorun-early>
+ <shortcut/>
+ <show-in-menu>true</show-in-menu>
+ <group-name>MyLib</group-name>
+ <menu-path>tools_menu.end</menu-path>
+ <interpreter>ruby</interpreter>
+ <dsl-interpreter-name/>
+ <text>RBA::MessageBox.info("Setup - Add Project Path to KLayout",
+  "To see this project's macros in KLayout:\n\n" +
+  "1) Tools → Macros → Macro Paths\n\n" +
+  "2) Click 'Add', paste:\n\n" +
+  "     E:\\PKU\\Ruby\\Ruby_mask-master\\Ruby_mask-master\n\n" +
+  "3) Click OK\n" +
+  "4) Press F3 to open Macro Development\n\n" +
+  "Your .rb files will appear in the tree.",
+  RBA::MessageBox::Ok)
+</text>
+</klayout-macro>
